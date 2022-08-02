@@ -1,4 +1,6 @@
 package com.example.demo.model;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDateTime;
 
 public class Parking {
@@ -8,7 +10,9 @@ public class Parking {
     private String state;
     private String model;
     private String color;
+
     private LocalDateTime entryDate;
+
     private LocalDateTime exitDate;
     private Double bill;
 
