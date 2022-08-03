@@ -15,6 +15,7 @@ import java.util.ArrayList;
 //@EnableSwagger2
 public class SwaggerConfig {
 
+
     @Bean
     public Docket apiconfigDocs() {
         return new Docket(DocumentationType.SWAGGER_2)

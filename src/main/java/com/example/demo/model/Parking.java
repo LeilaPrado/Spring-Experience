@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 public class Parking {
 
+
     private String id;
     private String licence;
     private String state;

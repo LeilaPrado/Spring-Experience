@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ParkingDTO {
 
+
     private String id;
     private String licence;
     private String state;
