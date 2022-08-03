@@ -18,6 +18,7 @@ import java.util.List;
 @Api(tags = "Parking Controller")
 public class parkingController {
 
+
     private final com.example.demo.service.parkingService parkingService;
     private final ParkingMapper parkingMapper;
 
