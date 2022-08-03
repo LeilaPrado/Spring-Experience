@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
+import com.example.demo.exception.ParkingNotFoundException;
 import com.example.demo.model.Parking;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,6 +22,10 @@ public class parkingService {
     }
 
     public Parking findById(String id){
+        Parking parking = parkingMap.get(id);
+        if (parking == null){
+            throw new ParkingNotFoundException(id);
+        }
         return parkingMap.get(id);
     }
 
@@ -42,5 +48,24 @@ public class parkingService {
         parkingCreate.setEntryDate(LocalDateTime.now());
         parkingMap.put(uuid, parkingCreate);
         return parkingCreate;
+    }
+
+    public void delete(String id) {
+        findById(id);
+        parkingMap.remove(id);
+    }
+
+    public Parking update(String id, Parking parkingCreate) {
+        Parking parking = findById(id);
+        parking.setColor(parkingCreate.getColor());
+        parkingMap.replace(id, parking);
+        return parking;
+    }
+
+    public Parking exit(String id) {
+        //recuperar o estacionado
+        //atualizar data de saida
+        //calcular o valor
+        return null;
     }
 }
